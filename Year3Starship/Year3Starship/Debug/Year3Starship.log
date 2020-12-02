@@ -1,0 +1,4 @@
+﻿  Main.cpp
+c:\users\scary\source\repos\year3starship\year3starship\main.cpp(15): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\scary\source\repos\year3starship\year3starship\main.cpp(17): warning C4305: 'argument': truncation from 'double' to 'float'
+  Year3Starship.vcxproj -> C:\Users\scary\source\repos\Year3Starship\Debug\Year3Starship.exe
