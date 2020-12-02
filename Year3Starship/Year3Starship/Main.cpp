@@ -7,16 +7,24 @@
 
 
 int main()
-{
+{//impact point
 	Vec3 impact (-8,1,0);
+	//coefficient
 	float Coef = 0.5;
+
 	Vec3 NStation  (2 / 3, 1 / 3, 2 / 3);
 	float mass, mose;
 	Vec3  N(0.66,0.33,0.66);
+
+	//I Spaceship
 	Vec3 ISS(20,40,20);
+	//I Asteroid
 	Vec3 IAS(0.1, 0.1, 0.1);
+	//R spaceship
 	Vec3 RST(-10, 2, 0);
+	//R asteroid
 	Vec3 RAS(2, -1, 0);
+
 	float VR;
 	float J;
 
@@ -27,6 +35,8 @@ int main()
 	Vec3 JRN2;
 	Vec3 JRR2;
 	Vec3 JRV2;
+
+
 	float JN1;
 	float JN2;
 
@@ -74,38 +84,48 @@ int main()
 
 
 	//n.[I1(R1*n)*R1]
+
+	//R1*N
 	JRN1.x = (((((RST.y*N.z) - (RST.z*N.y)))) );
 	JRN1.y = (((((RST.x*N.z) - (RST.z*N.x)))) );
 	JRN1.z = (((((RST.x*N.y) - (RST.y*N.x)))));
 
+	//I1(R1*n)
 	JRR1.x = ((-ISS.y*JRN1.z) - (-ISS.z*JRN1.y));
 	JRR1.y = ((-ISS.x*JRN1.z) - (-ISS.z*JRN1.x));
 	JRR1.z = ((-ISS.x*JRN1.y) - (-ISS.y*JRN1.x));
 
+	//[I1(R1*n)*R1]
+
 	JRV1.x = ((JRR1.y*RST.z) - (JRR1.z*RST.y));
 	JRV1.y = ((JRR1.x*RST.z) - (JRR1.z*RST.x));
 	JRV1.z = ((JRR1.x*RST.y) - (JRR1.y*RST.x));
-
+	//n.[I1(R1*n)*R1]
 	JN1 = (N.x*JRV1.x) + (N.y*JRV1.y) + (N.z*JRV1.z) ;
 
 
 	//n.[I2(R2*n)*R2]
+
+	//R2*N
 	JRN2.x = (((((RAS.y*N.z) - (RAS.z*N.y)))));
 	JRN2.y = (((((RAS.x*N.z) - (RAS.z*N.x)))));
 	JRN2.z = (((((RAS.x*N.y) - (RAS.y*N.x)))));
 
+	//I2(R2*n)
 	JRR2.x = ((-IAS.y*JRN2.z) - (-IAS.z*JRN2.y));
 	JRR2.y = ((-IAS.x*JRN2.z) - (-IAS.z*JRN2.x));
 	JRR2.z = ((-IAS.x*JRN2.y) - (-IAS.y*JRN2.x));
 
+	//[I2(R2*n)*R2]
 	JRV2.x = ((JRR2.y*RAS.z) - (JRR2.z*RAS.y));
 	JRV2.y = ((JRR2.x*RAS.z) - (JRR2.z*RAS.x));
 	JRV2.z = ((JRR2.x*RAS.y) - (JRR2.y*RAS.x));
 
+	//n.[I2(R2*n)*R2]
 	JN2 = (N.x*JRV2.x) + (N.y*JRV2.y) + (N.z*JRV2.z);
 
 
-	//
+	//J
 	J = (VR*(Coef + 1)) / ((1 / StarStation.mass) + (1 / Asteroid.mass) + JN1 + JN2)   ;
 std::cout << "J " <<J <<std::endl;
 	// final calculations for Final velocity of space station
@@ -113,6 +133,8 @@ std::cout << "J " <<J <<std::endl;
 	
 	StarStation.velocityf.y = StarStation.velocityi.y + ( (J*N.y)  / StarStation.mass);
 	StarStation.velocityf.z = StarStation.velocityi.z + (( J * N.z) / StarStation.mass);
+
+
 	// final Calculations for Final angular rotation of Space station
 
 	StarStation.angularVelf.x = StarStation.angularVeli.x +
