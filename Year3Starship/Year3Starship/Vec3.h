@@ -10,5 +10,15 @@ public:
 	Vec3();
 
 	void SetZero();
+
+	inline Vec3& operator * (const Vec3& vec3)
+	{
+		x = x * vec3.x;
+		y = y * vec3.y;
+		z = z * vec3.z;
+
+		Vec3 Answer = Vec3(x, y, z);
+		return Answer;
+	}
 };
 #endif
