@@ -110,6 +110,9 @@ int main()
 	//JRN2.y = (((((RAS.x*N.z) - (RAS.z*N.x)))));
 	//JRN2.z = (((((RAS.x*N.y) - (RAS.y*N.x)))));
 	JRN2 = RAS.operator*(N);
+	std::cout << "JRN2: " << JRN2.x << std::endl;
+	std::cout << "JRN2: " << JRN2.y << std::endl;
+	std::cout << "JRN2: " << JRN2.z << std::endl;
 	//I2(R2*n)
 	//JRR2.x = ((-IAS.y*JRN2.z) - (-IAS.z*JRN2.y));
 	//JRR2.y = ((-IAS.x*JRN2.z) - (-IAS.z*JRN2.x));
@@ -122,6 +125,10 @@ int main()
 	JRV2 = JRR2.operator*(RAS);
 	//n.[I2(R2*n)*R2]
 	//Use Cross product.
+	std::cout << "JRV2: " << JRV2.x << std::endl;
+	std::cout << "JRV2: " << JRV2.y << std::endl;
+	std::cout << "JRV2: " << JRV2.z << std::endl;
+
 	JN2 = (N.x*JRV2.x) + (N.y*JRV2.y) + (N.z*JRV2.z);
 	//JN2 = N.operator*(JRV2); 
 

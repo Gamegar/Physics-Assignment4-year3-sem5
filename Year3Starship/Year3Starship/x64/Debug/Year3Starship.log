@@ -1,0 +1,5 @@
+﻿  Main.cpp
+c:\users\scary\documents\github\physics assignments year 3\physics-assignment4-year3-sem5\year3starship\year3starship\main.cpp(17): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\scary\documents\github\physics assignments year 3\physics-assignment4-year3-sem5\year3starship\year3starship\main.cpp(22): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\scary\documents\github\physics assignments year 3\physics-assignment4-year3-sem5\year3starship\year3starship\vec3.h(21): warning C4172: returning address of local variable or temporary: Answer
+  Year3Starship.vcxproj -> C:\Users\scary\Documents\GitHub\Physics Assignments year 3\Physics-Assignment4-year3-sem5\Year3Starship\x64\Debug\Year3Starship.exe
